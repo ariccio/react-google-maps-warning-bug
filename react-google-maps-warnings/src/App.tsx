@@ -27,7 +27,8 @@ const MapComponent = () => {
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new (window as any).google.maps.LatLngBounds();
     map.fitBounds(bounds);
-    setMap(map)
+    setMap(map);
+    map.panTo(center);
   }, [])
 
   const onUnmount = React.useCallback(function callback(map) {
@@ -39,7 +40,7 @@ const MapComponent = () => {
   }
   return (
       <>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15} onLoad={onLoad} onUnmount={onUnmount}>
           { /* Child components, such as markers, info windows, etc. */ }
           <>f</>
         </GoogleMap>
