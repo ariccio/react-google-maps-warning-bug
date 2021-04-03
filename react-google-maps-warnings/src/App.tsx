@@ -14,7 +14,38 @@ const center = {
 };
 
 
+/*
+onEventName = "onClick
+googleEventName = "click"
 
+export function registerEvents(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  instance: any,
+  eventMap: Record<string, string>
+): google.maps.MapsEventListener[] {
+  const registeredList = reduce(
+    eventMap,
+    function reducer(
+      acc: google.maps.MapsEventListener[],
+      googleEventName: string,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      onEventName: any
+    ): google.maps.MapsEventListener[] {
+      if (typeof props[onEventName] === 'function') {
+        acc.push(google.maps.event.addListener(instance, googleEventName, props[onEventName]))
+      }
+
+      return acc
+    },
+    []
+  )
+
+  return registeredList
+}
+
+*/
 const MapComponent = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',

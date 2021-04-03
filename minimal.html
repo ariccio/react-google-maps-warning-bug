@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>minimal repro for issue #184059401</title>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvf-00kEHOEuEs0pcOmEkGfNnpu_NNnDY&callback=initMap"></script>
+    <script>
+
+    let map;
+
+    function initMap() {
+        console.log("initializing map")
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
+        });
+    }
+
+    </script>
+  </head>
+  <body>
+    <!-- page content -->
+    <a href="https://issuetracker.google.com/issues/184059401">
+        issue
+    </a>
+
+    <div id="map"></div>
+  </body>
+</html>
