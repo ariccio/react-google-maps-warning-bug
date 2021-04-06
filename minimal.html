@@ -14,7 +14,9 @@
         new google.maps.Map(mapDiv, options);
         const mapElem = document.getElementById("map");
         mapElem.style.height = "500px";
-        google.maps.event.addListener(map, "click", function(event) {});
+
+        //The fuck? I don't even need to add an event listener to trigger the warning!
+        // google.maps.event.addListener(map, "click", function(event) {});
       }
     </script>
   </head>
