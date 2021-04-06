@@ -5,17 +5,17 @@
     <title>minimal repro for issue #184059401</title>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvf-00kEHOEuEs0pcOmEkGfNnpu_NNnDY&callback=initMap"></script>
     <script>
-
-    let map;
-
-    function initMap() {
-        console.log("initializing map")
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 8,
-        });
-    }
-
+      function initMap() {
+        const mapDiv = document.getElementById("map");
+        const options = {
+          center: { lat: 39.8097343, lng: -98.5556199 },
+          zoom: 3.8
+        };
+        new google.maps.Map(mapDiv, options);
+        const mapElem = document.getElementById("map");
+        mapElem.style.height = "500px";
+        google.maps.event.addListener(map, "click", function(event) {});
+      }
     </script>
   </head>
   <body>
